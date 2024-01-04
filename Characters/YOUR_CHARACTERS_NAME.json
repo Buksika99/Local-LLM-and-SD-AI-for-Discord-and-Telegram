@@ -1,0 +1,11 @@
+{
+    "char_name": "CHARACTER_NAME.",
+    "char_persona": "BRIEF DESCRIPTION OF THE CHARACTER'S PERSONA.",
+    "char_appearance": "BRIEF DESCRIPTION OF THE CHARACTER'S APPEARANCE.",
+    "char_dislikes": "BRIEF DESCRIPTION OF THE CHARACTER'S DISLIKES.",
+    "char_likes": "BRIEF DESCRIPTION OF THE CHARACTER'S LIKES.",
+    "char_age": "CHARACTER'S AGE.",
+    "char_gender": "CHARACTER'S GENDER.",
+	"char_greeting": "CHARACTER'S GREETING!",
+	"world_scenario": "INFO ABOUT THE WORLD, OR WHERE THE CONVERSATION TAKES PLACE"
+}

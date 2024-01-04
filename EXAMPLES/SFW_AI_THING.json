@@ -1,0 +1,321 @@
+{
+  "SFW": {
+	"PREFIX": ["masterpiece, best quality, high quality, beautiful women, gorgeous, masterpiece, dramatic lighting, cinematic lighting"],
+	"characters": {
+		"Main_Character": {
+			"Raiden": ["Raiden Shogun", "purple hair", "purple eyes", "hair ornament", "(medium breasts:1.3)"],
+            "Madoka": ["<lora:brj-madoka-v2:1> ", "Higuchi Madoka", "hairclip", "brown hair", "purple eyes", "hair ornament", "multiple hairpins", "(medium breasts:1.1)"]
+        },
+		"without_clothing_prerequisite": {
+			"Elaina": ["<lora:elaina-ph_64:1>", "elaina (majo no tabitabi)", "grey hair", "ahoge", "blue eyes"],
+			"Suisei": ["<lora:allVtubersLora_hll31_(character1.2)_virtual_youtuber:1>", "Hoshimachi Suisei", "virtual youtuber", "blue hair", "star (symbol)", "blue eyes", "(medium breasts:1.1)"],
+			"Rushia_green": ["<lora:allVtubersLora_hll31_(character1.2)_virtual_youtuber:1>", "Uruha Rushia", "green hair", "hair bun", "skull hair ornament", "(small breasts:1.1)", "red eyes", "butterfly"],
+			"Rushia_pink": ["<lora:allVtubersLora_hll31_(character1.2)_virtual_youtuber:1>", "Uruha Rushia", "pink hair", "hair bun", "skull hair ornament", "(small breasts:1.1)", "red eyes", "butterfly"],
+			"Amana": ["Osaki Amana", "red hair", "yellow eyes", "hair ornament", "(medium breasts:1.1)"],
+			"Tenka": ["Osaki Tenka", "red hair", "yellow eyes", "hair ornament", "(large breasts:1.3)"],
+			"Ganyu": ["Ganyu (genshin impact)", "blue hair", "(large breasts:1.3)", "horns", "purple eyes"],
+			"Shenhe": ["<lora:shenhe2:1>", "shenhernd", "Shenhe (genshin impact)", "white hair", "blue eyes", "hair ornament", "(large breasts:1.3)"],
+			"Yukino": ["Yukino Yukinoshita", "long hair", "hair ribbon", "<lora:yukino_yukinoshita_v2:0.7>", "(small breasts:1.3)"],
+			"Shiori": ["<lora:CHAR-ShioriNovellaV2:1>", "ShioriNovella", "orange eyes", "split-color hair", "hair ornament", "(medium breasts:1.3)"],
+			"Toki": ["<lora:toki_asuma_v1:1>", "toki asuma", "blonde hair", "blue eyes", "(medium breasts:1.3)"],
+			"Kaguya": ["<lora:kaguya-08:1>", "shinomiya_kaguya", "black hair", "red eyes", "parted bangs"],
+			"PA": ["<lora:pa_san:1>", "pa san", "black choker", "(large breasts:1.3)", "green eyes"],
+			"Bocchi": ["<lora:gotoh_hitori:1>", "gotoh hitori", "pink hair", "blue eyes", "(large breasts:1.3)"],
+			"Nino": ["<lora:ninonakanospecial-lora-nochekaiser:0.75>", "nino nakano", "pink hair", "blue eyes", "hair ribbon", "butterfly hair ornament", "(large breasts:1.3)"],
+			"Miku": ["<lora:mikunakanospecial-lora-nochekaiser:0.75>", "miku nakano", "brown hair", "blue eyes", "headphones around neck", "(large breasts:1.3)"],
+			"Frieren": ["<lora:Frieren:1>", "frieren", "white hair", "long hair", "(medium breasts:1.3)"],
+			"Hoshino": ["<lora:ai hoshino s1-lora-nochekaiser:0.7>", "ai hoshino", "hair ribbon", "purple eyes", "purple hair", "star-shaped pupils", "symbol-shaped pupils"],
+			"Irys": ["<lora:Irys:0.65>", "pointy ears", "purple red hair", "gradient hair", "irys", "medium breasts", "purple blue heterochromia"],
+			"Saten": ["<lora:ruiko saten s3-lora-nochekaiser:0.85>", "black hair", "blue eyes", "saten ruiko", "flower hair ornament", "medium breasts"],
+			"Akane": ["<lora:akane kurokawa s1-lora-nochekaiser:0.7>", "akane kurokawa", "aqua eyes", "blue hair", "dark blue hair", "medium breasts"],
+			"A-chan": ["<lora:achan hololive-lora-nochekaiser:0.8>", "achan hololive", "purple hair", "black-framed eyewear", "glasses", "blue eyes", "medium breasts"],
+			"Numi": ["<lora:akumanihmune-vtuber-richy-v1:1>", "nihmunernd", "horns", "choker", "medium breasts", "hair clip"],
+			"Baelz": ["<lora:hakosbaelz2:1>", "hakosrnd", "hakos baelz", "medium breasts"],
+			"Raiden": ["<lora:raidenshogun:1>", "Raiden Shogun", "purple hair", "purple eyes", "hair ornament", "(medium breasts:1.3)"],
+            "Atalante": ["<lora:atalantaCharacterLora_v10_tail:1>", "Atalanta", "green hair", "animal ears", "hair between eyes"],
+            "Koyori": ["<lora:lora_hakui_koyori2:0.6>", "virtual youtuber, hakui koyori, animal ear fluff, fox ears, ahoge"],
+            "Mika Melatika": ["<lora:Mika_Melatika:0.8> mika melatika, black choker, headphones"],
+            "Keqing": ["<lora:keqing_lion_optimizer_dim64_loraModel_5e-3noise_token1_4-3-2023:1> keqing \\(genshin impact\\), hair bun, double bun, medium breasts"],
+            "Anis NIKKE": ["<lora:anis-nikke-richy-v2:1.3> anisrnd, yellow eyes, (medium breasts)"],
+            "Eris": ["<lora:eris_v6:1>, eris greyrat"],
+            "Kuki Shinobu": ["<lora:KShinobuV4:1>, KShinobuV4, green hair, purple eyes"],
+            "Fern": ["<lora:fernv2-lora-nochekaiser:1>, fern, bangs, (purple eyes:1.1),  purple hair, sidelocks, blunt bangs, bright pupils, half updo"],
+            "Chtholly": ["<lora:chtholly_nota_seniorious_v1.1:1>, chtholly nota seniorious, blue hair"],
+            "Sistine": ["<lora:sistineFibel2:1>, sistineFibelrnd, white hair, cat ears"]
+
+		},
+		"with_clothing_prerequisites": {
+			"Asuna JK": ["<lora:asuna_ichinose_v1:1>", "asuna ichinose", "school uniform", "collared shirt", "blue bow", "pleated skirt"],
+			"Numi JK": ["<lora:akumanihmune-vtuber-richy-v1:1>", "nihmune1st", "horns", "earrings", "hair clip", "white shirt", "necktie", "cleavage", "jacket", "open clothes", "choker", "skirt"],
+			"Fauna orig": ["<lora:ceres_fauna_v2:0.7>", "hmfc", "antlers",  "branch", "yellow eyes", "large breasts", "black choker", "dress", "wide sleeves", "green flower"],
+            "Shiroko": ["<lora:,abydosBlueArchive_v1_hoshino_shiroko_serika_nonomi_ayane:1>", "Shiroko", "White hair", "blue eyes", "blue tie"],
+            "Atalanta": ["<lora:atalantaCharacterLora_v10_tail:1>", "Atalanta", "green hair", "animal ears", "hair between eyes", "long hair", "skirt", "dress", "gloves", "green dress", "puffy sleeves", "short skirt", "green skirt"]
+
+		}
+
+	},
+	"special": {
+		"indoors_special_full_theme": {
+		  "church": ["indoors", "church", "dress", "nun", "thighs", "veil", "habit", "no panties", "side slit"],
+		  "office": ["indoors", "office", "dress", "office lady", "short skirt", "collared shirt", "cleavage", "id card", "plants", "dress shirt", "drawer", "monitor", "sticky note"],
+		  "classroom" : ["indoors", "classroom", "serafuku", "skirt", "short skirt", "white thighhighs", "partially unbuttoned shirt", "cleavage", "chalk board", "chair", "table"],
+		  "ferris wheel": ["ferris wheel", "window", "night", "sky", "cityscape", "winter", "scarf", "breath", "bare legs", "snowing", "skirt", "miniskirt", "off shoulder", "ferris crossed legs", "casual", "blush", "sweater"]
+		},
+		"outdoors_special_full_theme": {
+		  "mall": ["outdoors", "mall", "bystanders", "faceless people", "short skirt", "unbuttoned shirt", "cleavage", "shy", "embarrassed", "covering breasts", "covering privates"]
+		}
+	  },
+    "composition": {
+      "camera_angle": {
+        "upper body": {
+          "upper_body_from_front": ["from front", "from side", "from below"]
+        },
+        "portrait": {
+          "portrait_from_front": ["from front", "from side", "from below"]
+
+        },
+        "cowboy shot": {
+          "cowboy_shot_from_front": ["from front", "from below", "from side", "dutch angle"],
+          "cowboy_shot_from_behind": ["from behind", "from side", "from below", "sideways"]
+        },
+        "feet out of frame": {
+          "feet_out_of_frame_from_front": ["from front", "from below", "from side", "dutch angle"],
+          "feet_out_of_frame_from_behind": ["from behind", "from side", "from below", "sideways"]
+        }
+      },
+      "camera_focus": {
+        "from_behind_focus": ["ass focus", ""],
+		"skimpy_from_front": ["cleavage", "underboob", "cleavage cutout", "sideboob", "collarbone", ""]
+      }
+    },
+    "locations": {
+      "indoors": {
+        "bedroom": ["bed", "pillow", "chair", "nightstand", "curtain", "window", "wooden floor", "plants", "desk", "blanket", "futon", "mirror, reflection"],
+        "cafe": ["table", "window", "chair", ""],
+        "gym": ["sweat", "mirror", ""],
+        "office": ["desk", "calendar", "PC", "chair", "office chair", "plants", "window", "cubicle"],
+        "bar": ["chair", "alcohol", "tray", "counter", "desk", "wooden floor", "wooden wall"],
+        "kitchen": ["oven", "plants", "window", "wooden floor", "table", ""],
+        "bathroom": ["bathtub", "mirror, reflection"],
+        "classroom": ["chair", "table", "chalkboard", "white board", "windows"],
+        "library": ["books", "book shelfs", "table", "chair"],
+        "school": ["chair", "table", "chalkboard", "white board", "windows"],
+		"ferris_wheel": ["ferris wheel", "window", "night", "sky", "cityscape", "casual"]
+      },
+	  "outdoors": {
+		  "beach": ["palm trees", "sand", "ocean", "beach umbrella", "boat in distance"],
+		  "park": ["bench", "trees", "grass", "pavement", "clouds", "birds"],
+		  "lake": ["mountain", "trees", "water", "clouds", "birds"],
+		  "city": ["people", "bystanders", "crowd", "houses", "road", "shops", "signs"],
+	  	  "mall": [""],
+		  "bridge": [""],
+		  "market": [""],
+		  "pool": [""],
+		  "road": [""],
+		  "sidewalk": [""],
+		  "alley": ["rubbish"],
+		  "street": ["fence"],
+		  "bar": [""],
+		  "cafe": [""],
+		  "casino": [""],
+		  "church": [""],
+		  "house": [""],
+		  "gym": [""],
+		  "library": ["sign"],
+		  "school": ["fence"]
+	  }
+    },
+    "actions": {
+      "general_actions": {
+        "looking": ["looking at viewer", "looking away from viewer", ""],
+        "hand_actions": ["arm behind back", "hand in own hair", "hand on own chest", ""]
+      },
+      "posture": {
+        "posture_indoors": {
+          "kneeling": ["kneeling"],
+          "sitting": ["crossed legs", "wariza", "legs apart", "seiza"],
+          "lying": ["on back", "on stomach", "on side", "legs apart"],
+          "standing": ["crossed legs", "standing"],
+          "": [""]
+        },
+        "posture_outdoors": {
+          "standing": ["standing, crossed legs", "standing"],
+          "walking": ["walking"],
+          "": [""]
+        }
+      },
+      "clothing_actions": {
+        "skirt_actions": ["wind lift", "skirt lift", "skirt pull", "skirt hold", "adjusting skirt", "<lora:skirt_tug_v0.1-clothes_tug-skirt_tug-dress_tug-sweater_tug-shirt_tug-implied_pantyshot-upskirt-wind-wind_lift:1>, skirt, skirt tug, clothes tug, implied pantyshot, upskirt, wind, wind lift", ""],
+        "shirt_actions": ["dressing", "undressing", "unbuttoning shirt", "adjusting shirt", "shirt pull", "clothing pull", "<lora:skirt_tug_v0.1-clothes_tug-skirt_tug-dress_tug-sweater_tug-shirt_tug-implied_pantyshot-upskirt-wind-wind_lift:1>, shirt, shirt tug, clothes tug, implied pantyshot, upskirt, wind, wind lift", ""],
+        "hoodie_actions": ["<lora:skirt_tug_v0.1-clothes_tug-skirt_tug-dress_tug-sweater_tug-shirt_tug-implied_pantyshot-upskirt-wind-wind_lift:1>, hoodie, hoodie tug, clothes tug, wind, wind lift", ""],
+        "sweater_actions": ["<lora:skirt_tug_v0.1-clothes_tug-skirt_tug-dress_tug-sweater_tug-shirt_tug-implied_pantyshot-upskirt-wind-wind_lift:1>, sweater, sweater tug, clothes tug, wind, wind lift", ""],
+        "jeans_action": [""]
+      },
+	  "lora_actions": {
+		  "from_front": {
+			  "breasts squeezed together": ["<lora:breasts_squeezed_together_v0.2:1>, breasts squeezed together", "<lora:breasts_squeezed_together_v0.2:1>, breasts squeezed together,  v arms"]
+		  }
+	  }
+    },
+    "appearance": {
+      "exposed_bodyparts": {
+        "topwear_upper_body": ["bare arms", "bare shoulders", ""],
+        "topwear_open": ["navel", "stomach", "groin", "midriff", ""]
+      },
+      "hair": {
+        "hair_length": ["medium hair", "long hair", "very long hair", ""],
+        "hair_variants": ["braid", "ponytail", "straight", "blunt bangs", "two side up", "hair between eyes", "single braid", ""]
+      },
+      "face_tags": {
+		"eyes": ["one eye closed", "winking", ""],
+        "mouth": ["closed mouth", "open mouth", "parted lips", ""]
+      },
+      "emotions": {
+        "negative": ["angry", "annoyed", "disappointed", "disgust", "disdain", "evil", "exhausted", "pain", "sad", "depressed", "frown", "sobbing", "tears", "<lora:Concept_disgust:0.6>, disgust", "scared, <lora:constricted_pupils_v0.2a:1> constricted pupils, open mouth, wide eyed"],
+        "positive": ["blush", "excited", "expressionless", "grimace", "happy", "smile", "evil smile", "yandere smile", "pout", "sleepy", "surprised", "thinking", "pensive", "smirk", "smug", "lip bite"]
+      },
+      "attire": {
+        "pieces_of_attire": {
+          "topwear": {
+			  "topwear_undergarment" : {
+				"bra": ["bra"],
+                "bikini": ["bikini top"],
+                "": [""]
+			  },
+			  "topwear_first_layer": {
+                "shirt": {
+                  "closed": ["shirt", "short shirt", "frilled shirt", "off-shoulder shirt", "loose shirt", "oversized shirt"],
+                  "open": ["partially unbuttoned shirt", "open shirt", "partially unbuttoned frilled shirt", "open frilled shirt", "partially open loose shirt", "open loose shirt", "partially open off-shoulder shirt"]
+                },
+				"sleeveless": {
+					"closed": ["sleeveless shirt", "sleeveless sweater", "sleeveless hoodie", "sleeveless top", "sleeveless blouse"],
+					"open": ["sleeveless open shirt", "sleeveless open sweater"]
+				},
+                "blouse": {
+                  "closed": ["blouse", "loose blouse", "skin tight blouse", "skin tight blouse, skindentation"],
+                  "open": ["partially unbuttoned blouse", "partially open blouse"]
+                },
+                "crop_top": {
+                  "closed": ["crop top", "<lora:crop_top_overhang_v1:0.8>, crop top, crop top overhang, stomach, navel, midriff"],
+                  "open": ["crop top"]
+                },
+                "camisole": {
+                  "closed": ["camisole"],
+                  "open": [""]
+                },
+                "cardigan": {
+                  "closed": ["cardigan", "loose cardigan"],
+                  "open": ["open cardigan", "open loose cardigan"]
+                },
+                "sweater": {
+                  "closed": ["sweater", "oversized sweater", "off-shoulder sweater"],
+                  "open": ["off-shoulder sweater", "loose sweater"]
+                },
+                "tank_top": {
+                  "closed": ["tank top", "skin tight tank top"],
+                  "open": ["tank top", "skin tight tank top"]
+                }
+              },
+              "topwear_second_layer": {
+                "coat": {
+                  "closed": ["coat", "long coat", "fur coat", "winter coat"],
+                  "open": ["partially opened coat", "partially opened long coat", "partially opened fur coat", "partially opened winter coat", "open coat", "open long coat", "open fur coat", "open winter coat"]
+                },
+                "hoodie": {
+					"closed": ["hoodie", "oversized hoodie", "zip-up hoodie"],
+					"open": ["partially open hoodie", "partially open oversized hoodie", "open hoodie", "open oversized hoodie"]
+				},
+                "jacket": {
+					"closed": ["jacket", "track jacket", "bomber jacket"],
+					"open": ["partially open jacket", "open jacket", "partially open track jacket", "open track jacket"]
+				}
+              }
+          },
+          "bottomwear": {
+            "full_bottomwear": {
+              "pants": [
+                "yoga pants",
+                "tight pants",
+                "cargo pants",
+                "sweatpants"
+              ],
+              "pantyhose": [
+                "pantyhose"
+              ],
+              "yoga pants": [
+                "yoga pants"
+              ],
+              "jeans": [
+                "jeans"
+              ]
+            },
+            "partial_bottomwear": {
+              "skirt": [
+                "skirt",
+                "short skirt",
+                "miniskirt",
+                "microskirt",
+                "pencil skirt"
+              ],
+              "shorts": [
+                "shorts",
+                "micro shorts",
+                "lowleg shorts",
+                "dolphin shorts"
+              ],
+              "pelvic curtain": [
+                "pelvic curtain"
+              ]
+            }
+          }
+        },
+        "full_attire": {
+          "leotard": [
+            "playboy bunny",
+            "strapless leotard"
+          ],
+          "dress": [
+            "dress",
+            "pencil dress",
+            "cocktail dress",
+            "sailor dress",
+            "party dress",
+            "night dress"
+          ],
+          "cosplay": [
+            "serafuku",
+            "nightgown",
+            "babydoll",
+            "apron",
+            "cheerleader, skirt, miniskirt, pom pom (cheerleading), sleeveless, sleeveless shirt, cleavage",
+            "gym uniform",
+            "harem outfit",
+            "maid outfit",
+            "pajamas",
+            "waitress",
+            "bunny suit",
+            "changpao",
+            "kimono",
+            "nun costume",
+            "santa dress"
+          ]
+        }
+      },
+      "jewelry": {
+        "head_accessory": ["earrings", "hair ornament", ""],
+        "neck_jewelry": ["choker", "collar", "scarf", "necktie", "bowtie", ""],
+        "hand_jewelry": ["bridal gauntlets", "ring", "wedding ring", "wrist scrunchie", ""],
+		"hand_accessory": ["wrist cuffs", "elbow gloves"]
+        }
+      }
+    },
+    "NSFW": {
+    "colors_nsfw": ["blue"]
+  },
+  "colors": ["blue", "red", "purple", "green", "aqua", "pink", "yellow", "grey", "black"],
+  "legwear": ["garter belt", "kneehighs", "thighhighs", "leggings", "over-kneehighs", "thigh strap", "thigh gap", ""],
+  "VoidMix [fp16/bf16] [safetensors] [Checkpoint]": {
+	  "negatives": ["Paintings,sketches,(worst quality, low quality, normal quality:1.7),lowres,blurry,text,logo,((monochrome)),((grayscale)),skin spots,acnes,skin blemishes,age spot,strabismus,wrong finger,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,cropped,wort quality,low quality,normal quality,jpeg artifacts,signature,watermark,username,blurry,bad feet,(worst quality, low quality:1.4),hand,feet,foot,(dark skin:1.1),fused girls,fushion,bad-hands-5,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,signature,watermark,username,blurry,(bad feet:1.1),monochrome,jpeg artifacts,ugly,pregnant,vore,duplicate,morbid,mutilated,tran nsexual,hermaphrodite,long neck,mutated hands,poorly drawn hands,poorly drawn face,mutation,deformed,bad proportions,malformed limbs,extra limbs,cloned face,disfigured,gross proportions,(missing arms:1.331),(missing legs:1.331),(extra arms:1.331),(extra legs:1.331),plump,bad legs,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,worst quality,low quality,normal quality,jpeg artifacts,signature,watermark,username,blurry,long body,lowres,bad anatomy,bad hands,missing fingers,pubic hair,extra digit,fewer digits,cropped,worst quality,low quality,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,jpeg artifacts,signature,watermark,username,blurry,huge breasts,Large Breasts,kid,children,extra hands,extra armsï¼((disfigured)),((bad art)),((deformed)),ugly face,deformed face,malformed face,extra head,easynegative,badhandv4,Big Breasts,multiple girls,multiple views,Multiple Face"],
+	  "negative_good": ["bad-hands-5, by bad-artist,verybadimagenegative_v1.3,bad_prompt,(worst quality:2.0), (low quality:2.0),extra fingers, fewer fingers, (bad eyes:1.2), (misfigured pupils:1.2), (bad clothing:1.3), (undetailed clothing:1.3),(nonsensical backrounds:1.2), (bad backrounds:1.2), (bad shadows:1.2), (bad anatomy:1.3), (loli, child:1.3), (((out of frame))), (multiple views:1.4), (3d nose, real nose:1.4), see-through, nipples, navel,((fused fingers)),(interlocked fingers:1.4)"]
+  }
+}

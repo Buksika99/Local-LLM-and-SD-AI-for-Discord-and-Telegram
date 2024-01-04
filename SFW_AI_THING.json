@@ -1,0 +1,288 @@
+{
+  "SFW": {
+    "COMMENT": ["If something inside a [] is with small characters, don't change that. This file should contain TAME and non provocative themes/clothing."],
+	"PREFIX": ["masterpiece, best quality, high quality, beautiful women, gorgeous, masterpiece, dramatic lighting, cinematic lighting"],
+	"characters": {
+		"Main_Character": {
+          "ADD_CHARACTERS": ["THAT", "DONT", "HAVE", "PREDETERMINED", "CLOTHING"]
+        },
+		"without_clothing_prerequisite": {
+          "ADD_CHARACTERS": ["THAT", "DONT", "HAVE", "PREDETERMINED", "CLOTHING"]
+		},
+		"with_clothing_prerequisites": {
+          "ADD_CHARACTERS": ["THAT", "HAVE", "PREDETERMINED", "CLOTHING"]
+		}
+
+	},
+	"special": {
+		"indoors_special_full_theme": {
+		  "church": ["indoors", "ADD", "CHURCH", "THEMED", "PROPS", "AND",  "ACTIONS "],
+		  "office": ["indoors", "ADD", "OFFICE", "THEMED", "PROPS", "AND",  "ACTIONS "],
+		  "classroom" : ["indoors", "ADD", "CLASSROOM", "THEMED", "PROPS", "AND",  "ACTIONS "],
+		  "ferris wheel": ["indoors", "ADD", "FERRIS WHEEL", "THEMED", "PROPS", "AND", "CLOTHING"]
+		},
+		"outdoors_special_full_theme": {
+		  "mall": ["outdoors", "ADD", "MALL", "THEMED", "PROPS", "AND",  "ACTIONS "]
+		}
+	  },
+    "composition": {
+      "camera_angle": {
+        "upper body": {
+          "upper_body_from_front": ["from front", "from side", "from below"]
+        },
+        "portrait": {
+          "portrait_from_front": ["from front", "from side", "from below"]
+
+        },
+        "cowboy shot": {
+          "cowboy_shot_from_front": ["from front", "from below", "from side", "dutch angle"],
+          "cowboy_shot_from_behind": ["from behind", "from side", "from below", "sideways"]
+        },
+        "feet out of frame": {
+          "feet_out_of_frame_from_front": ["from front", "from below", "from side", "dutch angle"],
+          "feet_out_of_frame_from_behind": ["from behind", "from side", "from below", "sideways"]
+        }
+      },
+      "camera_focus": {
+        "from_behind_focus": ["ADD", "FROM", "BEHIND", "FOCUS"],
+		"skimpy_from_front": ["ADD", "FROM", "FRONT", "FOCUS"]
+      }
+    },
+    "locations": {
+      "indoors": {
+        "bedroom": ["ADD", "BEDROOM", "PROPS"],
+        "cafe": ["ADD", "CAFE", "PROPS"],
+        "gym": ["ADD", "GYM", "PROPS"],
+        "office": ["ADD", "OFFICE", "PROPS"],
+        "bar": ["ADD", "BAR", "PROPS"],
+        "kitchen": ["ADD", "KITCHEN", "PROPS"],
+        "bathroom": ["ADD", "BATHROOM", "PROPS"],
+        "classroom": ["ADD", "CLASSROOM", "PROPS"],
+        "library": ["ADD", "LIBRARY", "PROPS"],
+        "school": ["ADD", "SCHOOL", "PROPS"],
+		"ferris_wheel": ["ADD", "FERRIS WHEEL", "PROPS"]
+      },
+	  "outdoors": {
+		  "beach": ["ADD", "BEACH", "PROPS"],
+		  "park": ["ADD", "PARK", "PROPS"],
+		  "lake": ["ADD", "LAKE", "PROPS"],
+		  "city": ["ADD", "CITY", "PROPS"],
+	  	  "mall": ["ADD", "MALL", "PROPS"],
+		  "bridge": ["ADD", "BRIDGE", "PROPS"],
+		  "market": ["ADD", "MARKET", "PROPS"],
+		  "pool": ["ADD", "POOL", "PROPS"],
+		  "road": ["ADD", "ROAD", "PROPS"],
+		  "sidewalk": ["ADD", "SIDEWALK", "PROPS"],
+		  "alley": ["ADD", "ALLEY", "PROPS"],
+		  "street": ["ADD", "STREET", "PROPS"],
+		  "bar": ["ADD", "BAR", "PROPS"],
+		  "cafe": ["ADD", "CAFE", "PROPS"],
+		  "casino": ["ADD", "CASINO", "PROPS"],
+		  "church": ["ADD", "CHURCH", "PROPS"],
+		  "house": ["ADD", "HOUSE", "PROPS"],
+		  "gym": ["ADD", "GYN", "PROPS"],
+		  "library": ["ADD", "LIBRARY", "PROPS"],
+		  "school": ["ADD", "SCHOOL", "PROPS"]
+      }
+    },
+    "actions": {
+      "general_actions": {
+        "looking": ["ADD", "WHERE", "THE", "CHARACTER", "LOOKS"],
+        "hand_actions": ["ADD", "WHAT", "THE", "CHARACTERS", "HAND", "IS", "DOING"]
+      },
+      "posture": {
+        "posture_indoors": {
+          "kneeling": ["ADD", "KNEELING", "TYPE"],
+          "sitting": ["ADD", "SITTING", "TYPE"],
+          "lying": ["ADD", "LYING", "TYPE"],
+          "standing": ["ADD", "STANDING", "TYPE"],
+          "": [""]
+        },
+        "posture_outdoors": {
+          "standing": ["ADD", "STANDING", "TYPE"],
+          "walking": ["ADD", "WALKING", "TYPE"],
+          "": [""]
+        }
+      },
+      "clothing_actions": {
+        "skirt_actions": ["ADD", "SKIRT", "ACTIONS"],
+        "shirt_actions": ["ADD", "SHIRT", "ACTIONS"],
+        "hoodie_actions": ["ADD", "HOODIE", "ACTIONS"],
+        "sweater_actions": ["ADD", "SWEATER", "ACTIONS"],
+        "jeans_action": ["ADD", "JEANS", "ACTIONS"]
+      },
+	  "lora_actions": {
+		  "from_front": {
+			  "ADD_FROM": ["FRONT", "LORA", "ACTIONS"]
+		  }
+	  }
+    },
+    "appearance": {
+      "exposed_bodyparts": {
+        "topwear_upper_body": ["bare arms", "bare shoulders", ""],
+        "topwear_open": ["navel", "stomach", "groin", "midriff", ""]
+      },
+      "hair": {
+        "hair_length": ["ADD", "HAIR", "LENGTHS"],
+        "hair_variants": ["ADD", "HAIR", "VARIANTS"]
+      },
+      "face_tags": {
+		"eyes": ["ADD", "EYE", "STATES"],
+        "mouth": ["ADD", "MOUTH", "STATES"]
+      },
+      "emotions": {
+        "negative": ["ADD", "NEGATIVE", "EMOTIONS"],
+        "positive": ["ADD", "POSITIVE", "EMOTIONS"]
+      },
+      "attire": {
+        "pieces_of_attire": {
+          "topwear": {
+			  "topwear_undergarment" : {
+				"bra": ["ADD", "BRA", "TYPES"],
+                "bikini": ["ADD", "BIKINI", "TYPES"],
+                "": [""]
+			  },
+			  "topwear_first_layer": {
+                "shirt": {
+                  "closed": ["ADD", "CLOSED", "shirt", "TYPE"],
+                  "open": ["ADD", "OPEN", "SHIRT", "TYPE"]
+                },
+				"sleeveless": {
+					"closed": ["ADD", "CLOSED", "SLEEVELESS", "TYPE"],
+					"open": ["ADD", "OPEN", "SLEEVELESS", "TYPE"]
+                },
+                "blouse": {
+                  "closed": ["ADD", "CLOSED", "BLOUSE", "TYPE"],
+                  "open": ["ADD", "OPEN", "BLOUSE", "TYPE"]
+                },
+                "crop_top": {
+                  "closed": ["ADD", "CLOSED", "CROP TOP", "TYPE"],
+                  "open": ["ADD", "OPEN", "CROP TOP", "TYPE"]
+                },
+                "cardigan": {
+                  "closed": ["ADD", "CLOSED", "CARDIGAN", "TYPE"],
+                  "open": ["ADD", "OPEN", "CARDIGAN", "TYPE"]
+                },
+                "sweater": {
+                  "closed": ["ADD", "CLOSED", "SWEATER", "TYPE"],
+                  "open": ["ADD", "OPEN", "SWEATER", "TYPE"]
+                },
+                "tank_top": {
+                  "closed": ["ADD", "CLOSED", "TANK TOP", "TYPE"],
+                  "open": ["ADD", "OPEN", "TANK TOP", "TYPE"]
+                },
+                "ADD_NEW_TYPE_OF": {
+                    "closed": ["FIRST", "TOPWEAR", "LAYER"],
+                    "open": ["FIRST", "TOPWEAR", "LAYER"]
+                }
+              },
+              "topwear_second_layer": {
+                "coat": {
+                  "closed": ["ADD", "CLOSED", "COAT", "TYPE"],
+                  "open":["ADD", "OPEN", "COAT", "TYPE"]
+                },
+                "hoodie": {
+					"closed": ["ADD", "CLOSED", "HOODIE", "TYPE"],
+					"open": ["ADD", "OPEN", "HOODIE", "TYPE"]
+				},
+                "jacket": {
+					"closed": ["ADD", "CLOSED", "JACKET", "TYPE"],
+					"open": ["ADD", "OPEN", "JACKET", "TYPE"]
+                },
+                "ADD_NEW_TYPE_OF": {
+                    "closed": ["SECOND", "TOPWEAR", "LAYER"],
+                    "open": ["SECOND", "TOPWEAR", "LAYER"]
+                }
+              }
+          },
+          "bottomwear": {
+            "full_bottomwear": {
+              "pants": [
+                "ADD",
+                "TYPE",
+                "OF",
+                "PANTS"
+              ],
+              "pantyhose": [
+                "ADD",
+                "TYPE",
+                "OF",
+                "PANTYHOSE"
+              ],
+              "yoga pants": [
+                "ADD",
+                "TYPE",
+                "OF",
+                "YOGA PANTS"
+              ],
+              "jeans": [
+                "ADD",
+                "TYPE",
+                "OF",
+                "JEANS"
+              ],
+              "ADD_NEW": [
+                "TYPE",
+                "OF",
+                "FULL BOTTOMWEAR"
+              ]
+            },
+            "partial_bottomwear": {
+              "skirt": [
+                "ADD",
+                "TYPE",
+                "OF",
+                "SKIRT"
+              ],
+              "shorts": [
+                "ADD",
+                "TYPE",
+                "OF",
+                "SHORTS"
+              ],
+              "ADD_NEW": [
+                "TYPE",
+                "OF",
+                "PARTIAL BOTTOMWEAR"
+              ]
+            }
+          }
+        },
+        "full_attire": {
+          "leotard": [
+            "ADD",
+            "LEOTARDS"
+          ],
+          "dress": [
+            "ADD",
+            "DRESSES"
+          ],
+          "cosplay": [
+            "ADD",
+            "COSPLAY"
+          ],
+          "ADD_NEW": [
+            "TYPE",
+            "OF",
+            "FULL ATTIRE"
+          ]
+        }
+      },
+      "jewelry": {
+        "head_accessory": ["ADD","HEAD", "ACCESSORY"],
+        "neck_jewelry": ["ADD", "NECK", "JEWELRY"],
+        "hand_jewelry": ["ADD", "HAND", "JEWELRY"],
+		"hand_accessory": ["ADD", "HAND", "ACCESSORY"]
+        }
+      }
+    },
+    "NSFW": {
+    "colors_nsfw": ["blue"]
+  },
+  "colors": ["ADD", "COLORS"],
+  "legwear": ["ADD", "LEGWEAR"],
+  "VoidMix [fp16/bf16] [safetensors] [Checkpoint]": {
+	  "negatives": ["Paintings,sketches,(worst quality, low quality, normal quality:1.7),lowres,blurry,text,logo,((monochrome)),((grayscale)),skin spots,acnes,skin blemishes,age spot,strabismus,wrong finger,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,cropped,wort quality,low quality,normal quality,jpeg artifacts,signature,watermark,username,blurry,bad feet,(worst quality, low quality:1.4),hand,feet,foot,(dark skin:1.1),fused girls,fushion,bad-hands-5,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,signature,watermark,username,blurry,(bad feet:1.1),monochrome,jpeg artifacts,ugly,pregnant,vore,duplicate,morbid,mutilated,tran nsexual,hermaphrodite,long neck,mutated hands,poorly drawn hands,poorly drawn face,mutation,deformed,bad proportions,malformed limbs,extra limbs,cloned face,disfigured,gross proportions,(missing arms:1.331),(missing legs:1.331),(extra arms:1.331),(extra legs:1.331),plump,bad legs,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,worst quality,low quality,normal quality,jpeg artifacts,signature,watermark,username,blurry,long body,lowres,bad anatomy,bad hands,missing fingers,pubic hair,extra digit,fewer digits,cropped,worst quality,low quality,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,jpeg artifacts,signature,watermark,username,blurry,huge breasts,Large Breasts,kid,children,extra hands,extra armsï¼((disfigured)),((bad art)),((deformed)),ugly face,deformed face,malformed face,extra head,easynegative,badhandv4,Big Breasts,multiple girls,multiple views,Multiple Face"],
+	  "negative_good": ["bad-hands-5, by bad-artist,verybadimagenegative_v1.3,bad_prompt,(worst quality:2.0), (low quality:2.0),extra fingers, fewer fingers, (bad eyes:1.2), (misfigured pupils:1.2), (bad clothing:1.3), (undetailed clothing:1.3),(nonsensical backrounds:1.2), (bad backrounds:1.2), (bad shadows:1.2), (bad anatomy:1.3), (loli, child:1.3), (((out of frame))), (multiple views:1.4), (3d nose, real nose:1.4), see-through, nipples, navel,((fused fingers)),(interlocked fingers:1.4)"]
+  }
+}
