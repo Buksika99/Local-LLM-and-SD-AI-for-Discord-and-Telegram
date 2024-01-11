@@ -5,8 +5,11 @@ from discord.ext import commands
 import asyncio
 import base64
 import aiohttp
+import Selfie_Prompt_Generator
+
 
 YOUR_NAME = "YOUR NAME"
+
 
 
 # Prompt generator, for the selfie for now
@@ -790,8 +793,95 @@ async def model_base_params(chosen_model):
     }
     return result
 
+async def Take_A_Selfie(message):
+    user_selected_file = await model_manager.random_file_selector()
+    prompt_payload = Selfie_Prompt_Generator.generated_prompt()
+    base_param = await model_base_params(user_selected_file)
 
-async def take_a_selfie_test(message):
+    payload_to_send = f"(selfie:1.3), 1girl, solo, {prompt_payload}"
+    print(payload_to_send)
+
+    payload = {
+        "batch_size": 1,
+        "cfg_scale": base_param["random_cfg_scale"],
+        "comments": {
+
+        },
+        "denoising_strength": 0.7,
+        "disable_extra_networks": False,
+        "do_not_save_grid": False,
+        "do_not_save_samples": False,
+        "send_images": True,
+        "save_images": True,
+        "enable_hr": base_param["hr_true_or_false"],
+        "height": base_param["random_resolution"][1],
+        # "hr_negative_prompt": "sketch, duplicate, ugly, huge eyes, text, logo, monochrome, worst face, (bad and mutated hands:1.3), (worst quality:1.7), (low quality:1.7), (blurry:1.7), horror, geometry, bad prompt, (bad hands), (missing fingers), multiple limbs, bad anatomy, (interlocked fingers:1.2),(interlocked leg:1.2), Ugly Fingers, (extra digit and hands and fingers and legs and arms:1.4), crown braid,, (deformed fingers:1.2), (long fingers:1.2),succubus wings, horn, succubus horn, succubus hairstyle, (bad-artist-anime), bad-artist, bad hand",
+        # "hr_prompt": "raiden shogun, purple hair, purple eyes, from front, cowboy shot, from front, parted lips, medium hair, blunt bangs, hair twirling, kneeling, indoors, ferris wheel, cityscape, window, bare shoulders, camisole, camisole, yellow jacket, yellow open jacket, yellow jeans, yellow jeans,\ncinematic lighting, dramatic lighting, beautiful woman, gorgeous, masterpiece, high quality, best quality,",
+        "hr_resize_x": 0,
+        "hr_resize_y": 0,
+        "hr_scale": base_param["random_resolution"][2],
+        "hr_second_pass_steps": 35,
+        "hr_upscaler": "Latent (nearest)",
+        "n_iter": 1,
+        "negative_prompt": "",
+        "override_settings": {
+            "sd_model_checkpoint": base_param["random_model"],
+            "sd_vae": base_param['vae'],
+            "sd_vae_overrides_per_model_preferences": base_param['vae_override']
+        },
+        "override_settings_restore_afterwards": True,
+        "prompt": f"{payload_to_send}",
+        "restore_faces": False,
+        "s_churn": 0.0,
+        "s_min_uncond": 0,
+        "s_noise": 1.0,
+        "s_tmax": None,
+        "s_tmin": 0.0,
+        "sampler_name": base_param["random_sampler"],
+        "script_args": [
+
+        ],
+        "script_name": None,
+        "seed": -1,
+        "seed_enable_extras": True,
+        "seed_resize_from_h": -1,
+        "seed_resize_from_w": -1,
+        "steps": 35,
+        "styles": [
+            base_param["random_negative_prompt"]
+        ],
+        "subseed": -1,
+        "subseed_strength": 0,
+        "tiling": False,
+        "width": base_param["random_resolution"][0]
+    }
+
+    async with aiohttp.ClientSession() as session:
+        async with session.post(url=f'{SD_URL}/sdapi/v1/txt2img', json=payload) as response:
+            r = await response.json()
+
+    for i, image_data in enumerate(r['images']):
+        image_path = f"taken_selfie_{i}.png"
+        user_id = message.author.id
+
+        user = await bot.fetch_user(user_id)
+
+        with open(image_path, 'wb') as file:
+            file.write(base64.b64decode(image_data))
+
+        if user:
+            try:
+                with open(image_path, 'rb') as file:
+                    await user.send(file=discord.File(file))
+                print(f"Image sent to {user.name}")
+            except Exception as e:
+                print(f"Error: {e}")
+        else:
+            print(f"User not found. {user_id}")
+
+        os.remove(image_path)
+
+async def take_a_picture_test(message):
     user_selected_file = await model_manager.random_file_selector()
     user_selected_character = await model_manager.character_selected()
     user_selected_first_topwear_layer = await model_manager.first_topwear_layer_selected()
@@ -895,9 +985,14 @@ async def on_message(message):
     if message.author == bot.user:
         return
 
-    if "take a selfie" in message.content.lower():
-        await message.channel.send("Sent you a selfie <3")
-        await take_a_selfie_test(message)
+    if re.search(r'\b(take\s*a\s*(pic|picture))\b', message.content.lower(), re.IGNORECASE):
+        await message.channel.send("Sent you a pic <3")
+        await take_a_picture_test(message)
+
+    if re.search(r'\b(take\s*a\s*selfie)\b', message.content.lower(), re.IGNORECASE):
+        await message.channel.send("Gimme a sec, I'll fix my hair :*")
+        await Take_A_Selfie(message)
+
 
 
     elif "!" not in message.content[0]:
@@ -1023,6 +1118,23 @@ async def draw(ctx, *, message):
         print(f"Error: {e}")
         await ctx.reply("An error occurred during image generation.")
 
+@bot.command(name='help')
+async def help_function(client, message):
+    await message.reply_text("The following commands are available: \n"
+                             "!start \n"
+                             "!reset_parameters \n"
+                             "!change_model \n"
+                             "!change_resolution \n"
+                             "!change_sampler \n"
+                             "!change_number_of_pics \n"
+                             "!change_file \n"
+                             "!change_character \n"
+                             "!change_partial_bottomwear \n"
+                             "!change_full_bottomwear \n"
+                             "!change_first_topwear_layer \n"
+                             "!change_second_topwear_layer \n"
+                             "!change_full_attire")
+
 
 async def generate_selfie_and_send():
 
@@ -1147,7 +1259,7 @@ async def send_selfie_periodically():
 
 # Extracting lines for a possible image that depicts the past conversation
 def extract_last_n_lines(extract_last_n_lines_conversation_history, n):
-    with open(extract_last_n_lines_conversation_history, 'r') as file:
+    with open(extract_last_n_lines_conversation_history, 'a+') as file:
         lines = file.readlines()
         non_empty_lines = [extract_last_n_lines_line.strip() for extract_last_n_lines_line in lines if
                            extract_last_n_lines_line.strip()]
