@@ -7,6 +7,7 @@ from pyrogram import filters as pyrogram_filters
 from typing import Any
 import asyncio
 from datetime import datetime, time
+import Selfie_Prompt_Generator
 
 # Get the current time
 current_time = datetime.now()
@@ -251,7 +252,7 @@ async def update_history_and_send_response(message, user_message, response_text)
         conversation_history += f"{char_name}:{response_text}\n"
         with open(f'conversation_history_{char_name}.txt', "a") as f:
             f.write(f"{char_name}:{response_text}\n")
-    await botSD_and_LLM.send_message(chat_id=message.chat.id, text=response_text)
+    await botSD_and_LLM.send_message(chat_id=TELEGRAM_CHAT_ID, text=response_text)
 
 
 async def generate_and_send_message(chosen_method, char_name):
@@ -593,7 +594,7 @@ class ModelManager:
 
         random_model_chosen_here = random.choice(list(model_mapping.values()))
 
-        # If a current_model is provided and it's in the model_mapping, use it
+        # If a current_model is provided, and it's in the model_mapping, use it
         if self.current_model is not None and self.current_model in model_mapping:
             random_model_chosen_here = model_mapping[self.current_model]
             self.current_model = None  # Reset current_model to None after using it
@@ -645,7 +646,7 @@ class ModelManager:
             return f"{amount_of_pics} is not between 1 and 3 "
 
     def random_amount_of_pics(self):
-        returnable_amount_of_pics = random.choice(range(1, 4))
+        returnable_amount_of_pics = 1
 
         if self.amount_of_pics != 0 and self.amount_of_pics in list(range(1, 4)):
             returnable_amount_of_pics = self.amount_of_pics
@@ -901,7 +902,7 @@ def model_base_params(chosen_model):
     model = model_manager.random_model_selector(chosen_model)
     random_sampler = model_manager.random_sampler_selector()
     resolution = model_manager.random_resolution_selector()
-    amount_of_selfies = model_manager.random_amount_of_pics()
+    amount_of_images = model_manager.random_amount_of_pics()
     random_negative_prompt = Random_Negative_Prompt_Selector()
     random_cfg_scale = random.choice([7, 9])
     VAE = "Automatic"
@@ -926,7 +927,7 @@ def model_base_params(chosen_model):
     result = {
         'random_model': model,
         'random_sampler': random_sampler,
-        'amount_of_selfies': amount_of_selfies,
+        'amount_of_images': amount_of_images,
         'random_resolution': resolution,
         'random_negative_prompt': random_negative_prompt,
         'random_cfg_scale': random_cfg_scale,
@@ -937,7 +938,6 @@ def model_base_params(chosen_model):
     return result
 
 
-# User can ask for a selfie
 # Maybe could add a "chance" to not send one, maybe acting a bit angry?
 @botSD_and_LLM.on_message(pyrogram_filters.regex(r'\b(take\s*a\s*(pic|picture))\b', re.IGNORECASE))
 async def take_a_pic(client, message):
@@ -964,7 +964,6 @@ async def take_a_pic(client, message):
 
     K = await message.reply_text("Sure thing, one sec :*")
 
-    # Make a generate selfie prompt instead of the general one.
     payload = await Payload_for_images(f'"1girl, solo, " + {generated_prompt}')
 
     r = requests.post(url=f'{SD_URL}/sdapi/v1/txt2img', json=payload).json()
@@ -987,7 +986,6 @@ async def draw(client, message):
 
     K = await message.reply_text("Drawing the image, one sec :*")
 
-    # Make a generate selfie prompt instead of the general one.
     payload = await Payload_for_images(msg)
 
     r = requests.post(url=f'{SD_URL}/sdapi/v1/txt2img', json=payload).json()
@@ -1025,6 +1023,17 @@ async def process_image(message, image_data, image_path, caption):
 async def help_function(client, message):
     await message.reply_text("The following commands are available: \n"
                              "/start \n"
+                             "/reset_parameters \n"
+                             "/change_model \n"
+                             "/change_resolution \n"
+                             "/change_sampler \n"
+                             "/change_number_of_pics \n"
+                             "/change_file \n"
+                             "/change_character \n"
+                             "/change_partial_bottomwear \n"
+                             "/change_full_bottomwear \n"
+                             "/change_first_topwear_layer \n"
+                             "/change_second_topwear_layer \n"
                              "/change_full_attire")  # FINISH THIS
 
 
@@ -1041,6 +1050,20 @@ async def start(client, message):
     #                              url="http://t.me/botname?startgroup=true"),
     #     ]] https://docs.pyrogram.org/api/types/ <- If ever want to add something extra
 
+async def Take_A_Selfie(client, message):
+    prompt_payload = Selfie_Prompt_Generator.generated_prompt()
+
+    K = await message.reply_text("Gimme a sec, I'll fix my hair :*")
+
+    payload_to_send = f"(selfie:1.3), 1girl, solo, {prompt_payload}"
+    payload = await Payload_for_images(payload_to_send)
+
+    r = requests.post(url=f'{SD_URL}/sdapi/v1/txt2img', json=payload).json()
+
+    for i in r['images']:
+        image_data = i.split(",", 1)[0]
+        await process_image(message, image_data, "drawn_picture.png", f"Your selfie <3")
+
 
 @botSD_and_LLM.on_message(pyrogram_filters.text & pyrogram_filters.private)
 async def handle_message(client, message):
@@ -1054,8 +1077,12 @@ async def handle_message(client, message):
         print("User asked to take a picture. Bot will generate a picture instead of a response.")
         await take_a_pic(client, message)
 
+    if re.search(r'\b(take\s*a\s*selfie)\b', users_message_in_string, re.IGNORECASE):
+        print("User asked to take a selfie. Bot will generate a selfie instead of a response.")
+        await Take_A_Selfie(client, message)
+
     if users_message_in_string.startswith("/"):
-        print("User is changing  parameters.")
+        print("User is changing parameters.")
         return
 
     user_message_interaction = True
@@ -1101,7 +1128,7 @@ async def Payload_for_images(prompt_payload):
         "hr_scale": base_param["random_resolution"][2],
         "hr_second_pass_steps": 35,
         "hr_upscaler": "Latent (nearest)",
-        "n_iter": 1,
+        "n_iter": base_param["amount_of_images"],
         "negative_prompt": "",
         "override_settings": {
             "sd_model_checkpoint": base_param["random_model"]
@@ -1216,9 +1243,12 @@ loop.create_task(periodically_scheduler("selfie"))
 # Run the Pyrogram client
 botSD_and_LLM.run()
 
-# Build a "selfie" function, with a "selfie" JSON.
+# Build a "selfie" function, with a "selfie" JSON. «DONE»
 # If sending something from memory or the time since last message is more than 5 hours, make the bot comment on that.
 # Also make the bot take time into account, like "take a pic" should return with a picture at night or day, depending on time
 # Create a JSON file or .txt file where the date is being stored, then do some calculations to determine when was the last message
 # hours before, or days before, and add the according "context" to the prompt. Day -> Yesterday -> Day before yesterday -> 3 days ago
 #
+
+# If current date - last date <= 5 hours, then into the bot's prompt, write something like
+# Last interaction was 5 hours ago, USER may be busy or was SLEEPING
