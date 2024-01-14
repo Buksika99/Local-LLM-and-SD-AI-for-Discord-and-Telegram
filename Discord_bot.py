@@ -85,13 +85,6 @@ def load_character_data(lodad_character_data_characters_folder):
         if filename.endswith('.json'):
             with open(os.path.join(lodad_character_data_characters_folder, filename)) as read_file:
                 character_data = json.load(read_file)
-                image_file_jpg = f"{os.path.splitext(filename)[0]}.jpg"
-                image_file_png = f"{os.path.splitext(filename)[0]}.png"
-                if os.path.exists(os.path.join(lodad_character_data_characters_folder, image_file_jpg)):
-                    character_data['char_image'] = os.path.join(lodad_character_data_characters_folder, image_file_jpg)
-                elif os.path.exists(os.path.join(lodad_character_data_characters_folder, image_file_png)):
-                    character_data['char_image'] = os.path.join(lodad_character_data_characters_folder, image_file_png)
-
                 load_character_data_characters.append(character_data)
 
     return load_character_data_characters
