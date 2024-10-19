@@ -5,7 +5,7 @@ Running such a program locally can be extremely resource hungry on your PC, main
 First, install the requirements. One way to do this is to navigate to the downloaded folder with your Commandprompt or PowerShell, and run the line "pip install -r requirements.txt".
 
 Edit the .env file with your API's and chat ID's, and even though it's meant to be used locally, you can use Google Colab as an endpoint for KoboldAII or AUTOMATIC1111, or even both.
-Edit the JSON files as you seem fit, if it doesn't make sense use what's in the "EXAMPLES" folder.
+Edit the JSON files as you seem fit.
 Fill out the Character's JSON file accordingly as well and rename it to whatever you want your AI's personality to be called. You can create multiple personalities, the code supports that.
 
 Inside 'Discord.py' rename the 'YOUR_NAME = "YOUR NAME"' line, and insert your own name/nickname into it. After a while when the AI references you, it will call you this name.
